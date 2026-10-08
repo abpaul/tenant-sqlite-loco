@@ -1,0 +1,36 @@
+[package]
+name = "tenant-sqlite-loco"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.94"
+description = "Loco integration for scoped SQLite tenant databases"
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/abpaul/tenant-sqlite-loco"
+keywords = ["sqlite", "tenancy", "loco", "sea-orm"]
+categories = ["database", "web-programming"]
+publish = false
+include = ["src/**", "examples/**", "tests/**", "Cargo.toml", "README.md", "LICENSE", "NOTICE"]
+
+[dependencies]
+tenant-sqlite = { git = "https://github.com/abpaul/tenant-sqlite.git", rev = "1077718d6574c7f5aa19d8c3b928460f3730882f" }
+loco-rs = { version = "1.2", default-features = false, features = ["with-db", "db-sqlite"] }
+sea-orm-migration = { version = "2.0", default-features = false, features = ["sqlx-sqlite", "runtime-tokio-rustls"] }
+axum = { version = "0.8", default-features = false }
+async-trait = "0.1"
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+
+[dev-dependencies]
+sea-orm = { version = "2.0.4", default-features = false, features = ["sqlx-sqlite", "runtime-tokio-rustls"] }
+tokio = { version = "1.45", features = ["macros", "rt-multi-thread"] }
+tempfile = "3"
+serde_json = "1"
+tower = { version = "0.5", features = ["util"] }
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[lints.clippy]
+correctness = "deny"
