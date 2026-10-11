@@ -13,7 +13,7 @@ publish = false
 include = ["src/**", "examples/**", "tests/**", "Cargo.toml", "README.md", "LICENSE", "NOTICE"]
 
 [dependencies]
-tenant-sqlite = { git = "https://github.com/abpaul/tenant-sqlite.git", rev = "1077718d6574c7f5aa19d8c3b928460f3730882f" }
+tenant-sqlite = { git = "https://github.com/abpaul/tenant-sqlite.git", rev = "f77045983857414820da20907285593c3faa2c70" }
 loco-rs = { version = "1.2", default-features = false, features = ["with-db", "db-sqlite"] }
 sea-orm-migration = { version = "2.0", default-features = false, features = ["sqlx-sqlite", "runtime-tokio-rustls"] }
 axum = { version = "0.8", default-features = false }
